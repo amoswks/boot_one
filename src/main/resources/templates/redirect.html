@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>thymeleaf</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Welcome page of thymeleaf.</h1>
+system
+<a href="/redirect">redirect</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="/model">model</a>
+
+<form th:action = "@{/aa}" th:object="${city}"  th:method = "post">
+    <input type="text"  th:field="*{cityName}"/>
+    <input type="text"  th:field="*{description}" />
+    <input type="submit"/>
+</form>
+<th:block th:with = "">
+    <td th:if="0">及格啦</td>
+</th:block>
+</body>
+</html>
