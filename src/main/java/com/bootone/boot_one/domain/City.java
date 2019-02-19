@@ -1,9 +1,7 @@
 package com.bootone.boot_one.domain;
 
-import javax.persistence.Entity;
 import java.io.Serializable;
 
-@Entity
 public class City implements Serializable{
 
         private static final long serialVersionUID = -1L;
