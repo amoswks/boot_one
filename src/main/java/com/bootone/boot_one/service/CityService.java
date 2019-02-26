@@ -1,5 +1,6 @@
 package com.bootone.boot_one.service;
 import com.bootone.boot_one.domain.City;
+import org.springframework.stereotype.Service;
 
 public interface CityService {
     /**

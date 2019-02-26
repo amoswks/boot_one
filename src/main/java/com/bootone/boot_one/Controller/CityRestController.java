@@ -7,6 +7,7 @@ import com.bootone.boot_one.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.CacheManager;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
 
-@RestController
+@Controller
 public class CityRestController {
     @Autowired
     private CityService cityService;
@@ -29,17 +30,16 @@ public City findOneCity(@PathVariable("id") Long id) {
     System.out.println(cacheManager.getCacheNames());
     System.out.println(cacheManager.getCache("people").getNativeCache().toString());
     City city = cityService.findOne(id);
-    System.out.println(city.getCityName());
 
     return city;
 }
-
+/*
     @RequestMapping(value = "/city/{id}", method = RequestMethod.GET)
     public City findOneCity2(@PathVariable("id") Long id) {
         System.out.println("wangke2:" + id);
         City city = cityService.findOne2(id);
         return city;
-    }
+    }*/
 
 /*public ModelAndView findOneCity(@PathVariable("id") Long id) {
     System.out.prin tln("wangke:"+id);
@@ -55,7 +55,7 @@ public City findOneCity(@PathVariable("id") Long id) {
 
     return view;
 }*/
-    @RequestMapping(value = "/create", method = RequestMethod.GET)
+  /*  @RequestMapping(value = "/create", method = RequestMethod.GET)
     public String createUserForm(Map<String, Object> model) {
         model.put("time", "2018-5-26");
         model.put("message", "这是测试的内容。。。");
@@ -63,5 +63,5 @@ public City findOneCity(@PathVariable("id") Long id) {
         model.put("fromUserName", "老许");
 
         return "userForm";
-    }
+    }*/
 }
